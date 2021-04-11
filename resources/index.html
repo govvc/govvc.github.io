@@ -23,19 +23,19 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"manual","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="Stacked Cross Attention for Image-Text Matching  ## 1 简介  本文先提取图像和句子的特征，然后对每个region和word对应的使用attention，然后再计算相似度，这样就利用attention进行了更加精细的对齐，此方法推断出的对应关系更加全面，从而使图像文本匹配更具有解释性 。 2 具体步骤2.1 堆叠交叉注意力机制堆叠交叉注">
+  <meta name="description" content="厚德、笃学、崇实、尚新">
 <meta property="og:type" content="website">
-<meta property="og:title" content="GOVVC">
-<meta property="og:url" content="http://example.com/categories/Cross%20Modal/2021-4-11.html">
+<meta property="og:title" content="resources">
+<meta property="og:url" content="http://example.com/resources/index.html">
 <meta property="og:site_name" content="GOVVC">
-<meta property="og:description" content="Stacked Cross Attention for Image-Text Matching  ## 1 简介  本文先提取图像和句子的特征，然后对每个region和word对应的使用attention，然后再计算相似度，这样就利用attention进行了更加精细的对齐，此方法推断出的对应关系更加全面，从而使图像文本匹配更具有解释性 。 2 具体步骤2.1 堆叠交叉注意力机制堆叠交叉注">
+<meta property="og:description" content="厚德、笃学、崇实、尚新">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2021-04-10T16:11:06.602Z">
-<meta property="article:modified_time" content="2021-04-10T16:11:06.602Z">
+<meta property="article:published_time" content="2021-03-14T07:26:14.000Z">
+<meta property="article:modified_time" content="2021-04-11T09:56:32.547Z">
 <meta property="article:author" content="govvc">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://example.com/categories/Cross%20Modal/2021-4-11">
+<link rel="canonical" href="http://example.com/resources/">
 
 
 <script id="page-configurations">
@@ -48,7 +48,7 @@
   };
 </script>
 
-  <title> | GOVVC
+  <title>resources | GOVVC
 </title>
   
 
@@ -207,18 +207,11 @@
     <div class="post-block" lang="zh-CN">
       <header class="post-header">
 
-<h1 class="post-title" itemprop="name headline">
+<h1 class="post-title" itemprop="name headline">resources
 </h1>
 
 <div class="post-meta">
   
-  <ul class="breadcrumb">
-          
-            <li><a href="/categories/">CATEGORIES</a></li>
-            <li><a href="/categories/Cross%20Modal/">CROSS MODAL</a></li>
-            <li>2021-4-11</li>
-          
-  </ul>
 
 </div>
 
@@ -228,62 +221,13 @@
       
       
       <div class="post-body">
-          <h1 align='center'>
-    Stacked Cross Attention for
-Image-Text Matching
-</h1>
-## 1 简介
-
-<p>本文先提取图像和句子的特征，然后对每个region和word对应的使用attention，然后再计算相似度，这样就利用attention进行了更加精细的对齐，此方法推断出的对应关系更加全面，从而使图像文本匹配更具有解释性 。</p>
-<h2 id="2-具体步骤"><a href="#2-具体步骤" class="headerlink" title="2 具体步骤"></a>2 具体步骤</h2><h3 id="2-1-堆叠交叉注意力机制"><a href="#2-1-堆叠交叉注意力机制" class="headerlink" title="2.1 堆叠交叉注意力机制"></a>2.1 堆叠交叉注意力机制</h3><p>堆叠交叉注意机制有两个输入：$\large\mathit{V}=\left { v_1,…,v_k \right },v_i\in \mathbb{R}^{D}$，含有$\mathit{k}$ 个区域信息的图像特征编码；$\large\mathit{E}=\left { e_1,…,e_n \right },e_i\in \mathbb{R}^{D}$，含有$\mathit{n}$ 个单词的文本特征编码，其输出为图像-语句对的相似度。本文提出了两种互补的堆叠交叉注意力层：Image-Text 和 Text-Image。</p>
-<p><strong>Image-Text</strong></p>
-<p>![2021-4-11](D:\blog\source\categories\Cross Modal\2021-4-11.png)</p>
-<p>具体来讲，就是给出含有$\mathit{k}$ 个检测区域的图像$\mathit{I}$ 和含有$\mathit{n}$ 个单词的句子$\mathit{T}$ ，首先计算所有可能组成对的余弦相似度：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;https://www.codecogs.com/eqnedit.php?latex=\LARGE\mathit&#123;s_&#123;ij&#125;<span class="symbol">&amp;space;</span>&#125;=\frac&#123;<span class="symbol">&amp;space;</span>&#123;v_i^&#123;T&#125;<span class="symbol">&amp;space;</span>&#125;e_j&#125;<span class="symbol">&amp;space;</span>&#123;||v_i||||e_j||&#125;,i\in<span class="symbol">&amp;space;</span>[1,k],j\in[1,n]&quot;</span> <span class="attr">target</span>=<span class="string">&quot;_blank&quot;</span>&gt;</span><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;https://latex.codecogs.com/gif.latex?\LARGE\mathit&#123;s_&#123;ij&#125;<span class="symbol">&amp;space;</span>&#125;=\frac&#123;<span class="symbol">&amp;space;</span>&#123;v_i^&#123;T&#125;<span class="symbol">&amp;space;</span>&#125;e_j&#125;<span class="symbol">&amp;space;</span>&#123;||v_i||||e_j||&#125;,i\in<span class="symbol">&amp;space;</span>[1,k],j\in[1,n]&quot;</span> <span class="attr">title</span>=<span class="string">&quot;\LARGE\mathit&#123;s_&#123;ij&#125; &#125;=\frac&#123; &#123;v_i^&#123;T&#125; &#125;e_j&#125; &#123;||v_i||||e_j||&#125;,i\in [1,k],j\in[1,n]&quot;</span> /&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p></a>                （1）</p>
-<p>$\large s_{ij}$代表第$i$个图像区域和第$j$个单词的余弦相似度。根据经验，最好将相似度的阈值设为0，所以：</p>
-<p>$\LARGE\bar{s}<em>{ij}=[s</em>{ij}]+/\sqrt{\sum_{i=1}^{k}[s_{ij}]<em>+^2]},[x]</em>+\equiv max(x,0)$                (2)</p>
-<p>为了注意每个图片区域对应的单词，定义了一个结合权重的单词表征：</p>
-<p>$\LARGE{a_i^t}=\sum_{j=1}^{n}\alpha_{ij}e_j,\alpha_{ij}=\frac{exp(\lambda_1\bar{s}<em>{ij})}{\sum</em>{j=1}^nexp(\lambda_1)\bar{s}_{ij}}\$                （3）</p>
-<p>其中$\large{a_i^t}\$为语句向量，$\lambda_1$为$softmax$函数的翻转温度系数。如上定义的注意力权重为点乘注意力的一个变体。</p>
-<p>为了确定在给出的语境下每个图像区域的重要性，第$i$个区域和语句的余弦相似度为：</p>
-<p>$\LARGE\mathit{R}(v_i,a_i^t)=\frac{v_i^Ta_i^t}{||v_i||||a_i^t||}\$                （4）</p>
-<p>通过$\large{Log-SumExp}$   pooling($\large{LSE}$)来计算图像$\large{I}$，文本$\large{T}$的的相似度：</p>
-<p>$\LARGE{S_{LSE}}(I,T)=log(\sum_{i=1}^kexp(\lambda_2R(v_i,a_i^t)))^{(1/\lambda_2)}\$                （5）</p>
-<p>$\lambda_2$是决定将最相似的图像区域特征$v_i$和被注意的语句向量$a_i^t$放大多少倍的因子。当$\lambda_2\rightarrow\infty$，$S(I,T)$趋近于$max^k_{(i=1)}R(v_i,a_i^t)$。同样，也能用平均池化来总结$R(v_i,a_i^t)$：</p>
-<p>$\LARGE{S_{AVG}(I,T)=\frac{\sum_{i=1}^kR(v_i,a_i^t)}{k}}$                (6)</p>
-<p>需要注意的是，如果区域$\large{i}$没有出现在语句中，由于在计算$\alpha_i^t$时收集不到有用的信息，所以其对应的特征$\large{v_i}$不会与其对应的语句向量$\large{a_i^t}$相似。因此，比较$\large{a_i^t}$和$\large{v_i}$决定了对于相关语句区域$\large{i}$有多重要。</p>
-<h3 id="Text-Image"><a href="#Text-Image" class="headerlink" title="Text-Image"></a><strong>Text-Image</strong></h3><p>该模块架构参考上一模块</p>
-<p>通过点乘来计算区域-文本的相似度，并在不要注意力机制参与的情况下整合所有对的相似度：</p>
-<p>$\LARGE{S^{‘}<em>{SM}(I,T)=\sum</em>{j=1}^nmax_i(s_{ij})}$</p>
-<h3 id="2-2-目标对齐"><a href="#2-2-目标对齐" class="headerlink" title="2.2 目标对齐"></a>2.2 目标对齐</h3><p>铰链式的三元组损失：</p>
-<p>$\LARGE{L(I,T)=\sum_{\hat{T}}[\alpha-S(I,T)+S(I,\hat{T})]<em>++\sum</em>{\hat{I}}[\alpha-S(I,T)+S(\hat{I},T)]_+}$</p>
-<p>其中$\large{x}_+\equiv{max(x,0)}$，$\large{S}$为相似度函数。</p>
-<p>第一个$\large{sum}$考虑到了图片 $\large{I}$而言的negative语句$\large{\hat{T}}$,第二个$\large{sum}$考虑到了语句$\large{T}$而言的negative图片$\large{\hat{I}}$。如果两者足够相似，则可以通过边界$\large{\alpha}$来使得铰链损失为0。通常在实践中只考虑在小批量随机梯度下降中的hard negatives。</p>
-<p>本论文针对小批量中的the hardest negatives，对于$\large{(I,T)}$，the hardest negatives来自于$\large{\hat{I}<em>h=argmax</em>{m\neq{I}}S(m,T)}$和$\large{\hat{T}<em>h=argmax</em>{d\neq{T}}S(I,d)}$，因此有三元组损失：</p>
-<p>$\LARGE{l_{hard}(I,T)=[\alpha-S(I,T)+S(I,\hat{T}<em>h)]</em>++[\alpha-S(I,T)+S(\hat{I}<em>h,T)]</em>+}$</p>
-<h3 id="2-3-用自下而上注意力机制表征图片"><a href="#2-3-用自下而上注意力机制表征图片" class="headerlink" title="2.3 用自下而上注意力机制表征图片"></a>2.3 用自下而上注意力机制表征图片</h3><p>本问利用了<strong>Faster R-CNN</strong>和预训练好的<strong>ResNet-101</strong>来训练图片特征。为了学习具有丰富语义的特征表示，而不是预测对象类别，所以本模型预测了属性类别和实例类别，其中实例类别包含对象和其他难以本地化的重要内容（例如天空、草、建筑物、毛茸茸的）。</p>
-<p>$\large{f_i}$代表选中的区域$\large{i}$的平均池化特征，维度为2048，通过全连接层$\large{v_i=W_vf_i+b_v}$将其转为h维。</p>
-<h3 id="2-4-语句表征"><a href="#2-4-语句表征" class="headerlink" title="2.4 语句表征"></a>2.4 语句表征</h3><p>利用one-hot编码来表示句子中单词的index，再将其embedding为一个300维的向量。利用双向GRU模型将向量映射到最终的特征。</p>
-<p>前向GRU：$\large{\overrightarrow{h_{i}}=\overrightarrow{GRU}(x_i),i\in[1,n]}$</p>
-<p>反向GRU：**$\large{\overleftarrow{h_{i}}=\overleftarrow{GRU}(x_i),i\in[1,n]}$**</p>
-<p>最终特征：$\large{e_i=\frac{\overrightarrow{h_i}+\overleftarrow{h_i}}{2}}$</p>
-<h2 id="3-总结"><a href="#3-总结" class="headerlink" title="3 总结"></a>3 总结</h2><p>本文将attention应用到了图像区域和单词层面上的对齐，在解释性方面带来了很大提升，这样word和region的互相注意力机制和相似度计算也是题目叫做 Stacked Cross Attention的原因。并且使用了hard negative的优化方法，重点针对容易分类错误的样本，使得false positive更少些。</p>
-
+          
       </div>
       
       
       
     </div>
     
-  <ul class="breadcrumb">
-          
-            <li><a href="/categories/">CATEGORIES</a></li>
-            <li><a href="/categories/Cross%20Modal/">CROSS MODAL</a></li>
-            <li>2021-4-11</li>
-          
-  </ul>
 
     
     
@@ -338,10 +282,6 @@ Image-Text Matching
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">1.</span> <span class="nav-text">
-    Stacked Cross Attention for
-Image-Text Matching
-</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E5%85%B7%E4%BD%93%E6%AD%A5%E9%AA%A4"><span class="nav-number">1.1.</span> <span class="nav-text">2 具体步骤</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-%E5%A0%86%E5%8F%A0%E4%BA%A4%E5%8F%89%E6%B3%A8%E6%84%8F%E5%8A%9B%E6%9C%BA%E5%88%B6"><span class="nav-number">1.1.1.</span> <span class="nav-text">2.1 堆叠交叉注意力机制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Text-Image"><span class="nav-number">1.1.2.</span> <span class="nav-text">Text-Image</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-%E7%9B%AE%E6%A0%87%E5%AF%B9%E9%BD%90"><span class="nav-number">1.1.3.</span> <span class="nav-text">2.2 目标对齐</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-%E7%94%A8%E8%87%AA%E4%B8%8B%E8%80%8C%E4%B8%8A%E6%B3%A8%E6%84%8F%E5%8A%9B%E6%9C%BA%E5%88%B6%E8%A1%A8%E5%BE%81%E5%9B%BE%E7%89%87"><span class="nav-number">1.1.4.</span> <span class="nav-text">2.3 用自下而上注意力机制表征图片</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-4-%E8%AF%AD%E5%8F%A5%E8%A1%A8%E5%BE%81"><span class="nav-number">1.1.5.</span> <span class="nav-text">2.4 语句表征</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-%E6%80%BB%E7%BB%93"><span class="nav-number">1.2.</span> <span class="nav-text">3 总结</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
