@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>Self-Supervised Adversarial Hashing Networks for Cross-Modal Retrieval</title>
+      <link href="2021/04/18/2021-4-18/"/>
+      <url>2021/04/18/2021-4-18/</url>
+      
+        <content type="html"><![CDATA[<h2 align='center'>Self-Supervised Adversarial Hashing Networks for Cross-Modal Retrieval<h3 id="1-介绍"><a href="#1-介绍" class="headerlink" title="1. 介绍"></a>1. 介绍</h3><p>以往的深度学习方法往往只使用了数据集中的单一类别标签而忽略了其它标签，或者是编码长度小于128bits，使得哈希编码不能捕捉到模态之间的一致性。本文采用了一种基于对抗的自监督方法来更好地获取模态之间的联系。</p><h3 id="2-方法"><a href="#2-方法" class="headerlink" title="2. 方法"></a>2. 方法</h3><p><img src="C:\Users\YuHeng\AppData\Roaming\Typora\typora-user-images\1618729882722.png" alt="1618729882722"></p><p>在第一阶段模态特征和LabNet的语义特征相结合，在第二阶段语义特征和模态特征同时送入两个discriminator 网络中。模态之间的特征分布从而在语义特征的的监督下变得逐渐一致。</p><p>令$O={o_i}^n_{i=1},o_i=(v_i,t_i,l_i)。v_i,t_i$分别为图像特征和文本特征。$S$表示两个实例的相似性，$S_{ij}=1$表示相似，否则为0。哈希编码$B^{v,t}\in&lt;!–swig￼0–&gt;^K$，K为编码长度。</p><p><img src="C:\Users\YuHeng\AppData\Roaming\Typora\typora-user-images\1618729914841.png" alt="1618729914841"></p><p>$\large\delta(\Psi)=\frac{1}{1+e^{-\Psi_{ij}}},\Psi_{ij}=\frac{1}{2}&lt;b_i,b_j&gt;$.</p><p>实际操作中，$F^{v,t,l}$表示各个网络的输出层。</p><h4 id="2-1-自监督模块"><a href="#2-1-自监督模块" class="headerlink" title="2.1 自监督模块"></a>2.1 自监督模块</h4><p>将$l_i$视作$v_i,t_i$的自监督信息。通过LabNet将其语义特征非线性投影到相应的哈希编码，确保不同模态之间的这层关系可以良好的保留下来。最终表示如下所示：</p><p><img src="C:\Users\YuHeng\AppData\Roaming\Typora\typora-user-images\1618733872272.png" alt="1618733872272"></p><p>其中<img src="C:\Users\YuHeng\AppData\Roaming\Typora\typora-user-images\1618733941517.png" alt="1618733941517" style="zoom: 80%;" />$H^l,\hat{L^l}$分别为预测的哈希编码和标签。前两项为负对数似然函数，第三项为习得的哈希编码的近似损失，第四项为原始标签和预测标签的类别损失。</p><h4 id="2-2-特征学习"><a href="#2-2-特征学习" class="headerlink" title="2.2 特征学习"></a>2.2 特征学习</h4><p>利用语义来监督图像和文本模态得到的损失如下：</p><p><img src="C:\Users\YuHeng\AppData\Roaming\Typora\typora-user-images\1618736301998.png" alt="1618736301998"></p><p><img src="C:\Users\YuHeng\AppData\Roaming\Typora\typora-user-images\1618736323736.png" alt="1618736323736" style="zoom:67%;" />，<img src="C:\Users\YuHeng\AppData\Roaming\Typora\typora-user-images\1618737550923.png" alt="1618737550923" style="zoom:67%;" />。由于文本比较稀疏，作者在设计TxtNet时采用了多个1X1的卷积，能够融合不同尺度的特征。</p><h4 id="2-3-对抗学习"><a href="#2-3-对抗学习" class="headerlink" title="2.3 对抗学习"></a>2.3 对抗学习</h4><p>在LabNet的监督下，不同模态的语义关联性得到了良好的保留，但是不同模态的的分布性并不一致。所以引入对抗学习方法。把语义特征和文本特征送入图像的discriminator，把语义特征和图像特征送入文本的discriminator。</p><h3 id="3-总结"><a href="#3-总结" class="headerlink" title="3. 总结"></a>3. 总结</h3><p>本论文的一个亮点是，用Label生成特征和哈希来监督feature learning，而不是直接利用label来计算一个损失，在有监督的基础上进一步充分利用了数据集。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> -Cross Modal </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> -跨模态 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>java中Collections.sort排序详解</title>
       <link href="2021/04/11/java%E4%B8%ADCollections.sort%E6%8E%92%E5%BA%8F%E8%AF%A6%E8%A7%A3/"/>
       <url>2021/04/11/java%E4%B8%ADCollections.sort%E6%8E%92%E5%BA%8F%E8%AF%A6%E8%A7%A3/</url>
