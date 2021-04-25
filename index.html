@@ -199,6 +199,102 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/04/25/2021-4-25/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="govvc">
+      <meta itemprop="description" content="厚德、笃学、崇实、尚新">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="GOVVC">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/04/25/2021-4-25/" class="post-title-link" itemprop="url">Revamping Cross-Modal Recipe Retrieval with Hierarchical Transformers and Self-supervised Learning</a>
+        </h2>
+
+        <div class="post-meta">
+	
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-04-25 18:30:00 / 修改时间：16:19:17" itemprop="dateCreated datePublished" datetime="2021-04-25T18:30:00+08:00">2021-04-25</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Cross-Modal/" itemprop="url" rel="index"><span itemprop="name">-Cross Modal</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 align="center">
+    Revamping Cross-Modal Recipe Retrieval with Hierarchical Transformers andSelf-supervised Learning
+</h1>
+
+<h3 id="1-简介"><a href="#1-简介" class="headerlink" title="1. 简介"></a>1. 简介</h3><p>近年来的食谱跨模态检索引入了利用对比损失和三元组损失来将食谱和图片投影到共同的embedding空间，并在一些复杂模型和损失函数（跨模态注意力机制、对抗损失、辅助语义损失、多阶段学习、重建损失）得到基础上取得了一定的进展。但是这些工作大多是交织在一起的，使得更加依赖预训练文本表征和引入更加复杂的训练流程。本文提出了一种基于hierarchical transformer的端对端的食谱检索方法。</p>
+<h3 id="2-步骤"><a href="#2-步骤" class="headerlink" title="2. 步骤"></a>2. 步骤</h3><p>样本表示![2021-04-24 20-00-23 的屏幕截图](2021-4-25\2021-04-24 20-00-23 的屏幕截图.png)食谱![2021-04-24 20-01-55 的屏幕截图](2021-4-25\2021-04-24 20-01-55 的屏幕截图.png)，分别对应title，ingredients，instructions。</p>
+<p>![2021-04-24 20-04-11 的屏幕截图](D:\blog\source_posts\2021-4-25\2021-04-24 20-04-11 的屏幕截图.png)</p>
+<h4 id="2-1-Image-Encoder-2021-04-24-20-07-01-的屏幕截图-D-blog-source-posts-2021-4-25-2021-04-24-20-07-01-的屏幕截图-png"><a href="#2-1-Image-Encoder-2021-04-24-20-07-01-的屏幕截图-D-blog-source-posts-2021-4-25-2021-04-24-20-07-01-的屏幕截图-png" class="headerlink" title="2.1 Image Encoder ![2021-04-24 20-07-01 的屏幕截图](D:\blog\source_posts\2021-4-25\2021-04-24 20-07-01 的屏幕截图.png)"></a>2.1 Image Encoder ![2021-04-24 20-07-01 的屏幕截图](D:\blog\source_posts\2021-4-25\2021-04-24 20-07-01 的屏幕截图.png)</h4><p>通过![2021-04-24 20-07-27 的屏幕截图](2021-4-25\2021-04-24 20-07-27 的屏幕截图.png)将输入图片投影到embedding空间，利用与训练好的ImageNet权重来初始化ResNet-50作为图片encoder。将分类器的前一层输出通过一个线性层投影到embedding空间，维度D=1024。</p>
+<h4 id="2-2-Recipe-Encoder-2021-04-24-20-12-54-的屏幕截图-2021-4-25-2021-04-24-20-12-54-的屏幕截图-png"><a href="#2-2-Recipe-Encoder-2021-04-24-20-12-54-的屏幕截图-2021-4-25-2021-04-24-20-12-54-的屏幕截图-png" class="headerlink" title="2.2 Recipe Encoder![2021-04-24 20-12-54 的屏幕截图](2021-4-25\2021-04-24 20-12-54 的屏幕截图.png)"></a>2.2 Recipe Encoder![2021-04-24 20-12-54 的屏幕截图](2021-4-25\2021-04-24 20-12-54 的屏幕截图.png)</h4><p>![2021-04-24 20-16-07 的屏幕截图](2021-4-25\2021-04-24 20-16-07 的屏幕截图.png)。本文用3个基于transformer的encoder来替代LSTM，分别对应title，ingredients，instructions。</p>
+<p><strong>语句表征</strong>。标题含有一条语句，所以![2021-04-24 20-18-16 的屏幕截图](2021-4-25\2021-04-24 20-18-16 的屏幕截图.png)。类似![2021-04-24 20-18-43 的屏幕截图](2021-4-25\2021-04-24 20-18-43 的屏幕截图.png)，![2021-04-24 20-18-49 的屏幕截图](2021-4-25\2021-04-24 20-18-49 的屏幕截图.png)利用transformer的灵活性，将每个句子通过具有2层D=512，带有4个Attention头的第一层具有学好的位置编码的transformer网络。输出为transformer最后一层输出的均值。过程表示为![2021-04-24 20-26-07 的屏幕截图](2021-4-25\2021-04-24 20-26-07 的屏幕截图.png)如下图(a)所示。</p>
+<p>![2021-04-24 20-24-30 的屏幕截图](2021-4-25\2021-04-24 20-24-30 的屏幕截图.png)</p>
+<p><strong>层级表征</strong>。给出一串长为M语句列表，第一个Transformer用来获取M个固定大小的embeddings，再用同样结构不同参数的第二层获取最终编码。过程如上图(b)。通过这种结构来获取ingredients和instructions的输出。</p>
+<h4 id="2-3-成对数据的监督损失"><a href="#2-3-成对数据的监督损失" class="headerlink" title="2.3 成对数据的监督损失"></a>2.3 成对数据的监督损失</h4><p>![2021-04-24 20-34-06 的屏幕截图](2021-4-25\2021-04-24 20-34-06 的屏幕截图.png).a,p,n分别表示anchor、positive、negative，c()笔试余弦相似度矩阵，m为margin。在实际操作过程中，采用双向的triplet损失函数。</p>
+<p>![2021-04-24 20-37-08 的屏幕截图](2021-4-25\2021-04-24 20-37-08 的屏幕截图.png)</p>
+<p>n=i表示相同样本的embeddings，n=j为不同样本的embeddings。对于大小为B的batch，取每个样本的损失为：</p>
+<p>![2021-04-24 20-41-07 的屏幕截图](2021-4-25\2021-04-24 20-41-07 的屏幕截图.png)</p>
+<p>![2021-04-24 20-41-49 的屏幕截图](2021-4-25\2021-04-24 20-41-49 的屏幕截图.png)</p>
+<p>由于有成对的image-recipe数据，所以有如下损失：</p>
+<p>![2021-04-24 20-46-07 的屏幕截图](2021-4-25\2021-04-24 20-46-07 的屏幕截图.png)</p>
+<h4 id="2-4-自监督食谱损失"><a href="#2-4-自监督食谱损失" class="headerlink" title="2.4 自监督食谱损失"></a>2.4 自监督食谱损失</h4><p>在Recipe1M数据集中，有2/3的数据没有图片只有食谱。这也是为什么大多数的工作直接忽视掉了只含有文本信息的样本。然而有许多工作使用只有食谱的数据来预训练文本表征，用来对文本编码，然而这些工作都没有利用好所有的训练样本，因为在跨模态检索训练过程中这个预训练的表征并没有改变。</p>
+<p>由于特定食谱的三个成分能够提供互补的信息，他们之间的语义关联仍然能够用来获取更简装的语义一致性embeddings。本文又引入一个triplet 损失来约束食谱的三个成分之间的关联。</p>
+<p>![2021-04-24 20-57-23 的屏幕截图](2021-4-25\2021-04-24 20-57-23 的屏幕截图.png)</p>
+<p>这三者可以组成6中配对方式，流程如下图，所以</p>
+<p>![2021-04-24 20-58-44 的屏幕截图](2021-4-25\2021-04-24 20-58-44 的屏幕截图.png)![D:\blog\source_posts\2021-4-25\2021-04-24 20-58-56 的屏幕截图](D:\blog\source_posts\2021-4-25\2021-04-24 20-58-56 的屏幕截图.png)</p>
+<p>![2021-04-24 20-58-07 的屏幕截图](2021-4-25\2021-04-24 20-58-07 的屏幕截图.png)</p>
+<p>最后总损失为![2021-04-24 20-59-38 的屏幕截图](2021-4-25\2021-04-24 20-59-38 的屏幕截图.png)。</p>
+<h4 id="3-结论"><a href="#3-结论" class="headerlink" title="3 结论"></a>3 结论</h4><p>近几年来跨模态相关数据集的检索精度提升缓慢，18年提出的SCAN(Stacked cross attention network)在COCO和Flickr30数据集上跨模态检精确度仍然能排进前5。本篇论文只针对食谱这一数据集进行了一定的优化，更偏向于应用型研究，也是顺应趋势。</p>
+
+      
+    </div>
+
+    
+    
+    
+ 
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://example.com/2021/04/18/2021-4-18/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -501,7 +597,7 @@ Self-Supervised Adversarial Hashing Networks for Cross-Modal Retrieval
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">3</span>
+          <span class="site-state-item-count">4</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -568,7 +664,7 @@ Self-Supervised Adversarial Hashing Networks for Cross-Modal Retrieval
   </div>
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共1.8k字</span>
+  <span class="post-count">博客全站共3.2k字</span>
 </div>
 
     <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
