@@ -223,10 +223,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2021-04-25 18:30:00 / 修改时间：19:53:53" itemprop="dateCreated datePublished" datetime="2021-04-25T18:30:00+08:00">2021-04-25</time>
+              <time title="创建时间：2021-04-25 18:30:00" itemprop="dateCreated datePublished" datetime="2021-04-25T18:30:00+08:00">2021-04-25</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-05-04 21:43:06" itemprop="dateModified" datetime="2021-05-04T21:43:06+08:00">2021-05-04</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -248,11 +254,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 align="center">
-    Revamping Cross-Modal Recipe Retrieval with Hierarchical Transformers andSelf-supervised Learning
-</h1>
-
-<h3 id="1-简介"><a href="#1-简介" class="headerlink" title="1. 简介"></a>1. 简介</h3><p>近年来的食谱跨模态检索引入了利用对比损失和三元组损失来将食谱和图片投影到共同的embedding空间，并在一些复杂模型和损失函数（跨模态注意力机制、对抗损失、辅助语义损失、多阶段学习、重建损失）得到基础上取得了一定的进展。但是这些工作大多是交织在一起的，使得更加依赖预训练文本表征和引入更加复杂的训练流程。本文提出了一种基于hierarchical transformer的端对端的食谱检索方法。</p>
+          <h3 id="1-简介"><a href="#1-简介" class="headerlink" title="1. 简介"></a>1. 简介</h3><p>近年来的食谱跨模态检索引入了利用对比损失和三元组损失来将食谱和图片投影到共同的embedding空间，并在一些复杂模型和损失函数（跨模态注意力机制、对抗损失、辅助语义损失、多阶段学习、重建损失）得到基础上取得了一定的进展。但是这些工作大多是交织在一起的，使得更加依赖预训练文本表征和引入更加复杂的训练流程。本文提出了一种基于hierarchical transformer的端对端的食谱检索方法。</p>
 <h3 id="2-步骤"><a href="#2-步骤" class="headerlink" title="2. 步骤"></a>2. 步骤</h3><p>样本表示<img src="/2021/04/25/2021-4-25/2021-4-25%5C1.png" alt="2021-04-24 20-00-23 的屏幕截图">食谱![2021-04-24 20-01-55 的屏幕截图](2021-4-25\2021-04-24 20-01-55 的屏幕截图.png)，分别对应title，ingredients，instructions。</p>
 <p>![2021-04-24 20-04-11 的屏幕截图](D:\blog\source_posts\2021-4-25\2021-04-24 20-04-11 的屏幕截图.png)</p>
 <h4 id="2-1-Image-Encoder-2021-04-24-20-07-01-的屏幕截图-D-blog-source-posts-2021-4-25-2021-04-24-20-07-01-的屏幕截图-png"><a href="#2-1-Image-Encoder-2021-04-24-20-07-01-的屏幕截图-D-blog-source-posts-2021-4-25-2021-04-24-20-07-01-的屏幕截图-png" class="headerlink" title="2.1 Image Encoder ![2021-04-24 20-07-01 的屏幕截图](D:\blog\source_posts\2021-4-25\2021-04-24 20-07-01 的屏幕截图.png)"></a>2.1 Image Encoder ![2021-04-24 20-07-01 的屏幕截图](D:\blog\source_posts\2021-4-25\2021-04-24 20-07-01 的屏幕截图.png)</h4><p>通过![2021-04-24 20-07-27 的屏幕截图](2021-4-25\2021-04-24 20-07-27 的屏幕截图.png)将输入图片投影到embedding空间，利用与训练好的ImageNet权重来初始化ResNet-50作为图片encoder。将分类器的前一层输出通过一个线性层投影到embedding空间，维度D=1024。</p>
@@ -327,7 +329,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-04-20 17:14:54" itemprop="dateModified" datetime="2021-04-20T17:14:54+08:00">2021-04-20</time>
+                <time title="修改时间：2021-05-04 21:43:14" itemprop="dateModified" datetime="2021-05-04T21:43:14+08:00">2021-05-04</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -350,10 +352,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 align="center">
-Self-Supervised Adversarial Hashing Networks for Cross-Modal Retrieval
-
-<h3 id="1-介绍"><a href="#1-介绍" class="headerlink" title="1. 介绍"></a>1. 介绍</h3><p>以往的深度学习方法往往只使用了数据集中的单一类别标签而忽略了其它标签，或者是编码长度小于128bits，使得哈希编码不能捕捉到模态之间的一致性。本文采用了一种基于对抗的自监督方法来更好地获取模态之间的联系。</p>
+          <h3 id="1-介绍"><a href="#1-介绍" class="headerlink" title="1. 介绍"></a>1. 介绍</h3><p>以往的深度学习方法往往只使用了数据集中的单一类别标签而忽略了其它标签，或者是编码长度小于128bits，使得哈希编码不能捕捉到模态之间的一致性。本文采用了一种基于对抗的自监督方法来更好地获取模态之间的联系。</p>
 <h3 id="2-方法"><a href="#2-方法" class="headerlink" title="2. 方法"></a>2. 方法</h3><p><img src="/2021/04/18/2021-4-18/Users\YuHeng\AppData\Roaming\Typora\typora-user-images\1618729882722.png" alt="1618729882722"></p>
 <p>在第一阶段模态特征和LabNet的语义特征相结合，在第二阶段语义特征和模态特征同时送入两个discriminator 网络中。模态之间的特征分布从而在语义特征的的监督下变得逐渐一致。</p>
 <p>令$O={o_i}^n_{i=1},o_i=(v_i,t_i,l_i)。v_i,t_i$分别为图像特征和文本特征。$S$表示两个实例的相似性，$S_{ij}=1$表示相似，否则为0。哈希编码$B^{v,t}\in&lt;!–swig￼0–&gt;^K$，K为编码长度。</p>
@@ -368,7 +367,7 @@ Self-Supervised Adversarial Hashing Networks for Cross-Modal Retrieval
 <p><img src="/2021/04/18/2021-4-18/Users\YuHeng\AppData\Roaming\Typora\typora-user-images\1618736323736.png" alt="1618736323736" style="zoom:67%;">，<img src="/2021/04/18/2021-4-18/Users\YuHeng\AppData\Roaming\Typora\typora-user-images\1618737550923.png" alt="1618737550923" style="zoom:67%;">。由于文本比较稀疏，作者在设计TxtNet时采用了多个1X1的卷积，能够融合不同尺度的特征。</p>
 <h4 id="2-3-对抗学习"><a href="#2-3-对抗学习" class="headerlink" title="2.3 对抗学习"></a>2.3 对抗学习</h4><p>在LabNet的监督下，不同模态的语义关联性得到了良好的保留，但是不同模态的的分布性并不一致。所以引入对抗学习方法。把语义特征和文本特征送入图像的discriminator，把语义特征和图像特征送入文本的discriminator。</p>
 <h3 id="3-总结"><a href="#3-总结" class="headerlink" title="3. 总结"></a>3. 总结</h3><p>本论文的一个亮点是，用Label生成特征和哈希来监督feature learning，而不是直接利用label来计算一个损失，在有监督的基础上进一步充分利用了数据集。</p>
-</h2>
+
       
     </div>
 
@@ -463,72 +462,6 @@ Self-Supervised Adversarial Hashing Networks for Cross-Modal Retrieval
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/03/15/index/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="govvc">
-      <meta itemprop="description" content="厚德、笃学、崇实、尚新">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="GOVVC">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/03/15/index/" class="post-title-link" itemprop="url">home</a>
-        </h2>
-
-        <div class="post-meta">
-	
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-03-15 15:26:14" itemprop="dateCreated datePublished" datetime="2021-03-15T15:26:14+08:00">2021-03-15</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-04-11 18:50:24" itemprop="dateModified" datetime="2021-04-11T18:50:24+08:00">2021-04-11</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          
-      
-    </div>
-
-    
-    
-    
- 
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
 
@@ -597,7 +530,7 @@ Self-Supervised Adversarial Hashing Networks for Cross-Modal Retrieval
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">4</span>
+          <span class="site-state-item-count">3</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -667,7 +600,7 @@ Self-Supervised Adversarial Hashing Networks for Cross-Modal Retrieval
   </div>
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共3.2k字</span>
+  <span class="post-count">博客全站共3.1k字</span>
 </div>
 
     <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
