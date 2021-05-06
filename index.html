@@ -199,6 +199,101 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/05/04/Spring%E6%B3%A8%E8%A7%A3/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="govvc">
+      <meta itemprop="description" content="厚德、笃学、崇实、尚新">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="GOVVC">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/05/04/Spring%E6%B3%A8%E8%A7%A3/" class="post-title-link" itemprop="url">Spring 注解</a>
+        </h2>
+
+        <div class="post-meta">
+	
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-05-04 21:30:00" itemprop="dateCreated datePublished" datetime="2021-05-04T21:30:00+08:00">2021-05-04</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-05-06 15:44:37" itemprop="dateModified" datetime="2021-05-06T15:44:37+08:00">2021-05-06</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p><em>@Component</em>     创建对象的，等同于<bean>的功能。</bean></p>
+<p>​                            属性：value 就是对象名称，也就是bean id值。</p>
+<p>​                            位置：类的上面。</p>
+<p><em>@Repository</em>       (用在持久层类的上面)：放在dao的实现类上面，</p>
+<p>​                            创建dao对象，dao对象能访问数据库。</p>
+<p><em>@Service</em>             (用在业务层的上面)：放在service的实现类上面，</p>
+<p>​                            创建service对象，做业务处理。</p>
+<p><em>@Controller</em>     （用在控制器的上面)：放在控制器（处理类）的上面，</p>
+<p>​                            创建控制器对象，能够给接收用户提交的参数，</p>
+<p>​                            显示请求的处理结果。</p>
+<p>以上三个注解适用语法和 <em>Component</em> 一致。但是用于给项目的对象分层。</p>
+<p>一般类功能不具体时，使用 <em>Component</em> 注解。</p>
+<p><em>@Value</em>               简单类型的属性赋值。</p>
+<p>​                            位置：属性/set之上。无需set方法即可使用。</p>
+<p><em>@Autowired</em>        实现引用类型属性的赋值。</p>
+<p>​                            使用的是自动注入的原理，支持byName，byType</p>
+<p>​                            默认为byType。</p>
+<p>​                            若要使用byName<em>则需在属性上另外加 @Qualify</em>(value=”bean的id”)。</p>
+<p>​                            <em>@Autowired</em>有属性required，默认为true，表示引用类型赋值失败则终止执行。</p>
+<p><em>@Resource</em>          jdk自带注解，类似Autowired，默认byName，若失败则使用byType。</p>
+<p>经常修改的值使用xml配置文件，不然尽可能使用注解。</p>
+<p>切面的执行时间：</p>
+<ul>
+<li><em>@Before</em></li>
+<li><em>@AfterReturning</em></li>
+<li><em>@Around</em></li>
+<li><em>@AfterThrowing</em></li>
+<li><em>@After</em></li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+ 
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://example.com/2021/04/25/2021-4-25/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -530,7 +625,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">3</span>
+          <span class="site-state-item-count">4</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -600,7 +695,7 @@
   </div>
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共3.1k字</span>
+  <span class="post-count">博客全站共3.5k字</span>
 </div>
 
     <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
